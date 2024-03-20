@@ -15,6 +15,10 @@ a {
     text-decoration: none;
 }
 
+.sidebar-btn {
+    display: none;
+}
+
 
 .navbar {
     min-width: 100vw;
@@ -35,6 +39,12 @@ a {
     justify-content: flex-start;
     align-items: center;
 }
+
+.myntra-icon {
+    width: 45px;
+}
+
+
 
 
 .navbar .navbar-menu p {
@@ -94,6 +104,12 @@ a {
 .navbar .navbar-menu2 .navbar-options .view-wishlists a p,
 .navbar .navbar-menu2 .navbar-options .view-bag a p {
     font-size: .8rem;
+}
+
+.navbar-options .view-profile svg,
+.navbar-options .view-wishlists svg,
+.navbar-options .view-bag svg {
+    width: 15px;
 }
 
 
@@ -196,11 +212,13 @@ a {
 }
 
 .footer-container {
+    margin-top: 30px;
     width: 90%;
     height: 600px;
     display: flex;
     justify-content: space-evenly;
 }
+
 .footer h3 {
     font-size: larger;
     font-weight: 700;
@@ -252,6 +270,7 @@ li a {
     color: #696b79;
     font-size: 15px;
 }
+
 .originals img,
 .replacedays img {
     width: 40px;
@@ -259,7 +278,7 @@ li a {
 
 .replacedays,
 .originals {
-display: flex;
+    display: flex;
 }
 
 
@@ -270,4 +289,279 @@ display: flex;
     justify-content: center;
     align-items: center;
     height: 25px;
+}
+
+
+
+/* -------------------------------------- media query------------------------------------------------*/
+@media screen and (max-width:1215px) {
+    .navbar-search-bar {
+        width: 257px;
+    }
+
+    .sidebar-btn {
+        display: none;
+    }
+}
+
+@media screen and (max-width:1035px) {
+    .navbar-search-bar {
+        width: 70px;
+    }
+
+    .sidebar-btn {
+        display: none;
+    }
+}
+
+@media screen and (max-width:853px) {
+    .navbar .navbar-menu p {
+        margin: 5px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .sidebar-btn {
+        display: none;
+    }
+
+    .myntra-icon {
+        width: 30px;
+    }
+
+    .items {
+        width: 80%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+        grid-gap: 20px;
+        justify-content: center;
+    }
+
+    .navbar-options .view-profile svg,
+    .navbar-options .view-wishlists svg,
+    .navbar-options .view-bag svg {
+        width: 12px;
+    }
+
+    .footer h3 {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    li a {
+        color: #696b79;
+        font-size: 13px;
+    }
+
+    .footer .footer-links li {
+        margin-bottom: 0px;
+    }
+
+    .footer-container-3-img1 {
+        width: 70px;
+    }
+
+    .footer-container-3-img2 {
+        width: 15px;
+        height: 15px;
+    }
+
+    .originals img,
+    .replacedays img {
+        width: 30px;
+    }
+
+    .copyright {
+        background-color: rgba(194, 192, 192, 0.89);
+        ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:634px) {
+
+    .sidebar-btn {
+        display: none;
+    }
+
+    .myntra-icon {
+        display: none;
+    }
+
+    .navbar-search-bar {
+        width: 45px;
+    }
+
+    .navbar .navbar-menu2 .navbar-options {
+        font-size: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .items {
+        width: 80%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 100px 100px 100px 100px;
+        grid-gap: 20px;
+        justify-content: center;
+    }
+
+    .navbar-options .view-profile svg,
+    .navbar-options .view-wishlists svg,
+    .navbar-options .view-bag svg {
+        width: 12px;
+    }
+
+    .navbar .navbar-menu2 .navbar-options .view-profile a p,
+    .navbar .navbar-menu2 .navbar-options .view-wishlists a p,
+    .navbar .navbar-menu2 .navbar-options .view-bag a p {
+        font-size: 0.6rem;
+    }
+
+    .footer h3 {
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    li a {
+        color: #696b79;
+        font-size: 11px;
+    }
+
+    .footer .footer-links li {
+        margin-bottom: 0px;
+    }
+
+    .footer-container-3-img1 {
+        width: 60px;
+    }
+
+    .footer-container-3-img2 {
+        width: 12px;
+        height: 12px;
+    }
+
+    .originals img,
+    .replacedays img {
+        width: 25px;
+    }
+}
+
+
+@media screen and (max-width:492px) {
+    .navbar .navbar-menu {
+        width: 20%;
+    }
+
+    .navbar .navbar-menu2 {
+        width: 80%;
+    }
+
+    .sidebar-btn {
+        display: inline;
+        border: none;
+        font-size: 1.2rem;
+
+    }
+
+    .myntra-icon {
+        display: none;
+    }
+
+    .navbar-menu p {
+        display: none;
+    }
+
+    .navbar-search-bar {
+        width: 200px;
+    }
+
+    .navbar .navbar-menu2 .navbar-options {
+        font-size: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .items {
+        width: 80%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-gap: 20px;
+        justify-content: center;
+    }
+
+    .navbar-options .view-profile svg,
+    .navbar-options .view-wishlists svg,
+    .navbar-options .view-bag svg {
+        width: 12px;
+    }
+
+    .navbar .navbar-menu2 .navbar-options .view-profile a p,
+    .navbar .navbar-menu2 .navbar-options .view-wishlists a p,
+    .navbar .navbar-menu2 .navbar-options .view-bag a p {
+        font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width:359px) {
+    .navbar .navbar-menu {
+        width: 10%;
+    }
+
+    .navbar .navbar-menu2 {
+        width: 90%;
+        gap:1.2rem;
+    }
+
+    .navbar-search-bar {
+        width: 150px;
+    }
+
+
+
+
+    .footer-container {
+        width: 90%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .footer-container-1 .footer-links1 {
+        list-style-type: none;
+        margin: 10px;
+        display: grid;
+        grid-template-columns: 39px 52px 35px 85px 47px 60px;
+    }
+
+    .footer-container-1 .footer-links2 {
+        list-style-type: none;
+        margin: 10px;
+        display: grid;
+        grid-template-columns: 39px 52px 35px 85px 47px 60px;
+    }
+
+    .footer-links3 {
+        list-style-type: none;
+        margin: 10px;
+        display: grid;
+        grid-template-columns: 66px 30px 29px 74px 68px 60px;
+    }
+
+
+    .footer-container {
+        height: 387px;
+    }
 }
