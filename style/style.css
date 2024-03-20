@@ -14,6 +14,11 @@ body {
 a {
     text-decoration: none;
 }
+sup{
+    color: red;
+}
+
+
 
 .sidebar-btn {
     display: none;
@@ -38,6 +43,10 @@ a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+.navbar .navbar-menu a:hover{
+    color:rgb(222, 93, 222);
 }
 
 .myntra-icon {
@@ -194,6 +203,23 @@ a {
     font-weight: 400;
     font-size: 9px;
     margin-left: 5px;
+}
+
+
+.buy{
+    background-color: rgb(77, 168, 77);
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px ;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-bottom: 5px;
+}
+
+.buy .add-to-bag{
+    color: rgb(255, 255, 255);
+
 }
 
 
