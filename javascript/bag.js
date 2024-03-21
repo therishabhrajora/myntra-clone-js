@@ -1,12 +1,14 @@
-let bagitemobjects;
+/*let bagitemobjects;
+
 onload();
 
 function onload() {
     displaybagitmes();
+    console.log(bagitems);
 }
 
 function displaybagitmes() {
-    console.log(bagitems);
+   
 
     let selecteditems = document.querySelector('.selected-item-container');
     if (!selecteditems) {
@@ -40,3 +42,4 @@ function generateitemhtml() {
 }
 
 
+*/
