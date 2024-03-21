@@ -1,4 +1,6 @@
 
+let bagitems;
+
 onload();
 function onload() {
     let bagitemsstr = localStorage.getItem('bagitems');
@@ -6,8 +8,6 @@ function onload() {
     displayitems();
     displaybagicon();
 }
-
-
 
 function addtobag(itemId) {
     bagitems.push(itemId);
@@ -28,9 +28,8 @@ function displaybagicon() {
 
 function displayitems() {
 
-    const items = document.querySelector(".items");
-    console.log(items);
-    if(!items){
+    let itemcontainerelement = document.querySelector(".items");
+    if(!itemcontainerelement){
         return;
     }
     let innerHtml = '';
@@ -55,5 +54,5 @@ function displayitems() {
     </div>`
     });
 
-    items.innerHTML = innerHtml;
+    itemcontainerelement.innerHTML = innerHtml;
 }
