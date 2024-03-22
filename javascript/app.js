@@ -7,8 +7,9 @@ function onload() {
     bagitems = bagitemsstr ? JSON.parse(bagitemsstr) : [];
     displayitems();
     displaybagicon();
-    displaybagitmes();
     loadbagitemobject();
+    displaybagitmes();
+
 }
 
 function addtobag(itemId) {
@@ -19,6 +20,7 @@ function addtobag(itemId) {
 
 function displaybagicon() {
     let bagitemcount = document.querySelector('.bag-item-count');
+    console.log(bagitemcount);
     if (bagitems.length > 0) {
         bagitemcount.style.visibility = 'visible';
         bagitemcount.innerText = bagitems.length;
@@ -77,18 +79,29 @@ function loadbagitemobject() {
 
 
 function displaybagitmes() {
-    let selecteditems=document.querySelector('.bag-main');
-    let innerHTML="";
-    bagitemobjects.forEach(bag=>{
-        innerHTML+=generateitemhtml(bag);
+    let selecteditems = document.querySelector('.selected-item-portion');
+    console.log(selecteditems);
+    let innerHtml = "";
+    bagitemobject.forEach(bag => {
+        innerHtml += generateitemhtml(bag);
     })
-    selecteditems.innerHTML=innerHTML;
+    selecteditems.innerHTML = innerHtml;
 
 }
 
+
+function removefrombag(itemid) {
+    bagitems = bagitems.filter(bagitemId => bagitemId != itemid);
+    localStorage.setItem('bagitems', JSON.stringify(bagitems));
+    loadbagitemobject();
+    displaybagicon();
+    displaybagitmes();
+   
+}
+
+
 function generateitemhtml(bag) {
-    ` 
-    <div class="selected-item-portion">
+    return `<div class="selected-item-portion">
         <div class="selected-item">
         <div class="selected-item-img">
             <img src="${bag.item_img}"
@@ -104,7 +117,7 @@ function generateitemhtml(bag) {
             <span class="selected-return-policy"> days return available</span>
             <span class="selected-delievry-description">Delivery by </span>
         </div>
-        <span class="close-btn">X</span>
+        <div class="close-btn" onclick="removefrombag(${bag.id})">X</div>
         </div>
     </div>`
 }
