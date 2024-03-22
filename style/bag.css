@@ -209,6 +209,11 @@ a {
     gap: 10px;
 }
 
+.selected-original-price{
+    font-size: .8rem;
+    text-decoration: line-through;
+}
+
 .selected-item-price {
     font-size: .9rem;
     font-weight: 700;

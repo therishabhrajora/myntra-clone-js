@@ -1,3 +1,5 @@
+const convenience_fee=99;
+
 let bagitemobjects;
 let bagitems;
 let bagitemobject;
@@ -9,7 +11,7 @@ function onload() {
     displaybagicon();
     loadbagitemobject();
     displaybagitmes();
-
+    displaypricesummery();
 }
 
 function addtobag(itemId) {
@@ -96,8 +98,52 @@ function removefrombag(itemid) {
     loadbagitemobject();
     displaybagicon();
     displaybagitmes();
+    displaypricesummery();
    
 }
+
+function displaypricesummery(){
+    let pricedetail=document.querySelector(".price-details-portion");
+    let totalitem=bagitemobject.length;
+    let totalMRP=0;
+    let totalDiscount=0;
+
+    bagitemobject.forEach(bagitem=>{
+        totalMRP+=bagitem.original_MRP;
+        totalDiscount+=bagitem.original_MRP-bagitem.item_price;
+    })
+
+    let totalpayment=totalMRP-totalDiscount+convenience_fee;
+    console.log(totalpayment);
+    
+
+    pricedetail.innerHTML=`
+    <span class="price-detail-heading"> PRICE DETAILS (<span>${totalitem} items</span>)</span>
+                <table>
+                    <tr>
+                        <td>Total MRP</td>
+                        <td>Rs${totalMRP}</td>
+                    </tr>
+                    <tr>
+                        <td>Discount on MRP</td>
+                        <td>Rs-${totalDiscount}</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Coveniance Fee</td>
+                        <td>Rs${convenience_fee}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Amount</td>
+                        <td>Rs${totalpayment}</td>
+                    </tr>
+                </table>
+                <div class="place-order">
+                    <span>Place Order</span>
+                </div>`;
+            
+}
+
 
 
 function generateitemhtml(bag) {
@@ -112,10 +158,11 @@ function generateitemhtml(bag) {
             <span class="selected-item-description">${bag.item_type}</span>
             <div class="selected-item-price-discount">
                 <span class="selected-item-price">Rs${bag.item_price}</span>
-                <span class="selected-item-discount">${bag.item_discount}</span>
+                <span class="selected-item-discount">(${bag.item_discount}%off)</span>
             </div>
-            <span class="selected-return-policy"> days return available</span>
-            <span class="selected-delievry-description">Delivery by </span>
+            <span class="selected-original-price">Rs${bag.original_MRP}</span>
+            <span class="selected-return-policy"><b>14 days </b>days return available</span>
+            <span class="selected-delievry-description"> Delivery by 30.03.2024</span>
         </div>
         <div class="close-btn" onclick="removefrombag(${bag.id})">X</div>
         </div>

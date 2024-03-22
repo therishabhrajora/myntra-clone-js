@@ -6,6 +6,8 @@ const itemdata = [
     item_type: "Opaque Casual Shirt",
     item_price: 911,
     item_discount: 43,
+    original_MRP:1800,
+    
     item_rating: {
         ratings: 4.1,
         counts: 425,
@@ -23,6 +25,8 @@ const itemdata = [
     item_type: "Opaque Casual Shirt",
     item_price: 833,
     item_discount: 40,
+    original_MRP:1250,
+    
 },
 
 {
@@ -36,6 +40,8 @@ const itemdata = [
     item_type: "Opaque Casual Shirt",
     item_price: 833,
     item_discount: 40,
+    original_MRP:1470,
+    
 },
 
 {
@@ -49,6 +55,8 @@ const itemdata = [
     item_type: "Opaque Casual Shirt",
     item_price: 833,
     item_discount: 40,
+    original_MRP:1200,
+    
 },
 
 {
@@ -62,6 +70,8 @@ const itemdata = [
     item_type: "Opaque Casual Shirt",
     item_price: 833,
     item_discount: 40,
+    original_MRP:1210,
+    
 },
 
 {
@@ -75,6 +85,8 @@ const itemdata = [
     item_type: "Opaque Casual Shirt",
     item_price: 833,
     item_discount: 40,
+    original_MRP:1547,
+    
 },
 
 {
@@ -88,6 +100,8 @@ const itemdata = [
     item_type: "Opaque Casual Shirt",
     item_price: 833,
     item_discount: 40,
+    original_MRP:1898,
+    
 },
 
 {
@@ -101,6 +115,8 @@ const itemdata = [
     item_type: "Opaque Casual Shirt",
     item_price: 833,
     item_discount: 40,
+    original_MRP:1230,
+    
 },
 ];
 
