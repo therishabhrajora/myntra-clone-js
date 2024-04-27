@@ -1,8 +1,9 @@
-const convenience_fee=99;
+const convenience_fee = 99;
 
 let bagitemobjects;
 let bagitems;
 let bagitemobject;
+
 onload();
 function onload() {
     let bagitemsstr = localStorage.getItem('bagitems');
@@ -12,6 +13,8 @@ function onload() {
     loadbagitemobject();
     displaybagitmes();
     displaypricesummery();
+    noItems();
+    
 }
 
 function addtobag(itemId) {
@@ -22,7 +25,7 @@ function addtobag(itemId) {
 
 function displaybagicon() {
     let bagitemcount = document.querySelector('.bag-item-count');
-    console.log(bagitemcount);
+
     if (bagitems.length > 0) {
         bagitemcount.style.visibility = 'visible';
         bagitemcount.innerText = bagitems.length;
@@ -63,12 +66,9 @@ function displayitems() {
     itemcontainerelement.innerHTML = innerHtml;
 }
 
-
-
 /*---------------------------------------------------------------------------------------*/
 
 function loadbagitemobject() {
-    console.log(bagitems);
     bagitemobject = bagitems.map(itemid => {
         for (let i = 0; i < itemdata.length; i++) {
             if (itemid == itemdata[i].id) {
@@ -76,13 +76,19 @@ function loadbagitemobject() {
             }
         }
     })
-    console.log(bagitemobject);
+
+}
+
+function noItems(){
+    let noItem=document.querySelector('.bag-main');
+    if(bagitems==0){
+        noItem.innerHTML=`<h2 class="noItem"> There is Nothing... </h2>`;
+    }
 }
 
 
 function displaybagitmes() {
     let selecteditems = document.querySelector('.selected-item-portion');
-    console.log(selecteditems);
     let innerHtml = "";
     bagitemobject.forEach(bag => {
         innerHtml += generateitemhtml(bag);
@@ -99,25 +105,25 @@ function removefrombag(itemid) {
     displaybagicon();
     displaybagitmes();
     displaypricesummery();
-   
+    noItems();  
+
 }
 
-function displaypricesummery(){
-    let pricedetail=document.querySelector(".price-details-portion");
-    let totalitem=bagitemobject.length;
-    let totalMRP=0;
-    let totalDiscount=0;
+function displaypricesummery() {
+    let pricedetail = document.querySelector(".price-details-portion");
+    let totalitem = bagitemobject.length;
+    let totalMRP = 0;
+    let totalDiscount = 0;
 
-    bagitemobject.forEach(bagitem=>{
-        totalMRP+=bagitem.original_MRP;
-        totalDiscount+=bagitem.original_MRP-bagitem.item_price;
+    bagitemobject.forEach(bagitem => {
+        totalMRP += bagitem.original_MRP;
+        totalDiscount += bagitem.original_MRP - bagitem.item_price;
     })
 
-    let totalpayment=totalMRP-totalDiscount+convenience_fee;
-    console.log(totalpayment);
-    
+    let totalpayment = totalMRP - totalDiscount + convenience_fee;
 
-    pricedetail.innerHTML=`
+
+    pricedetail.innerHTML = `
     <span class="price-detail-heading"> PRICE DETAILS (<span>${totalitem} items</span>)</span>
                 <table>
                     <tr>
@@ -141,10 +147,8 @@ function displaypricesummery(){
                 <div class="place-order">
                     <span>Place Order</span>
                 </div>`;
-            
+
 }
-
-
 
 function generateitemhtml(bag) {
     return `<div class="selected-item-portion">
